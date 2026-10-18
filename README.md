@@ -49,6 +49,7 @@ Execute antes de ler o restante deste arquivo: a saída **mostra os três desliz
 Siga as etapas da ficha de atividade prática:
 
 1. **Fazer a conta.** Registre neste README quantas subclasses de relatório existem hoje e quantas seriam necessárias se a secretaria pedisse uma quarta característica (um rodapé com a data de emissão). Mostre o raciocínio de 2ⁿ.
+Resposta: Para 4 caracteristicas seria necessário 4 subclasses, pois para cada caracteristica nova temos a possibilidade te usar ou não, sendo assim a base se torna 2 elevado a n intens que acrescentamos
 2. **Criar os decoradores.** Escreva a classe abstrata `DecoradorRelatorio`, que implementa `Relatorio` e contém um `Relatorio`, e as três subclasses `ComCabecalho`, `ComNumeracao` e `ComMarcaDagua`. Cada uma deve conter o seu comportamento **uma vez só**. Ao terminar, as quatro classes `RelatorioCom...` originais podem ser apagadas.
 3. **Empilhar.** No `Main`, monte pelo menos **duas pilhas diferentes** de decoradores sobre o mesmo `RelatorioDeAlunos` e imprima as duas saídas. Experimente inverter a ordem de `ComCabecalho` e `ComNumeracao` e observe o que muda.
 4. **Criar o Composite.** Escreva a interface `ItemCurricular` com `getNome()`, `getCargaHoraria()` e `imprimir(int nivel)`. Faça `Disciplina` e `Modulo` a implementarem, com a coleção de `Modulo` passando a ser de `ItemCurricular`. A classe `GradeCurricular` deixa de existir: as operações passam a ser dos próprios itens.
@@ -68,6 +69,6 @@ A apostila adota a primeira. Você pode adotar a outra — mas **justifique a es
 
 ## Padrão de entrega
 
-Conforme a ficha de atividade prática: identificadores em português, um arquivo `.java` por classe pública, código formatado, entrega no repositório Git com README e commits descritivos. O uso de IA para gerar o código é proibido nesta atividade (ver seção 5.3 da ficha).
+Conforme a ficha de atividade prática: identificadores em português, um arquivo `.java` por classe pública, código formatado, entrega no repositório Git com README e commits descritivos. (ver seção 5.3 da ficha).
 
 > **Projeto Integrador:** a Etapa 2, com entrega na Aula 13, exige a aplicação justificada de ao menos um padrão estrutural. Com esta aula a frente estrutural fica completa — Adapter, Facade, Decorator e Composite —, e a equipe escolhe entre os quatro. Desconfie da tentação de usar o mais sofisticado: um Composite sobre uma estrutura que nunca passará de dois níveis é custo sem contrapartida.

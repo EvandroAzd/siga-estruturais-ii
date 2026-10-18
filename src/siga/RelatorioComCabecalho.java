@@ -4,7 +4,11 @@ package siga;
  * DESLIZE 1 — uma subclasse por combinação de características.
  * DESLIZE 2 — o texto do cabeçalho começa a se repetir aqui.
  */
-public class RelatorioComCabecalho extends RelatorioDeAlunos {
+public class RelatorioComCabecalho extends DecoratorRelatorio{
+
+    public RelatorioComCabecalho(Relatorio relatorio) {
+        super(relatorio);
+    }
 
     @Override
     public String gerar() {

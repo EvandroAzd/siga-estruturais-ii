@@ -11,23 +11,19 @@ public class Main {
 
         System.out.println();
         System.out.println("1) Relatorios: uma subclasse por combinacao");
-        Relatorio[] variantes = {
-            new RelatorioDeAlunos(),
-            new RelatorioComCabecalho(),
-            new RelatorioComNumeracao(),
-            new RelatorioComCabecalhoENumeracao(),
-            new RelatorioComCabecalhoENumeracaoEMarcaDagua()
-        };
-        for (Relatorio r : variantes) {
-            System.out.println("   --- " + r.getClass().getSimpleName() + " ---");
-            for (String linha : r.gerar().split("\n")) {
-                System.out.println("   " + linha);
-            }
-        }
-        System.out.println("   >> DESLIZE 1: sao 4 subclasses para 3 caracteristicas opcionais,");
-        System.out.println("      e faltam as combinacoes que ninguem pediu ainda. Com 3 opcionais");
-        System.out.println("      independentes seriam 8 classes; com 4, seriam 16.");
-        System.out.println("   >> DESLIZE 2: o texto do cabecalho esta escrito em TRES classes.");
+        System.out.println("Exemplo 1: Relatorio com numeração e cabeçalho");
+
+        Relatorio r = new RelatorioDeAlunos();
+        r = new RelatorioComNumeracao(r);
+        r = new RelatorioComCabecalho(r);
+        System.out.println(r.gerar());
+
+        System.out.println("\nExemplo 2: Relatorio com numeraçao, cabeçalho e marca d agua");
+        Relatorio r2 = new RelatorioDeAlunos();
+        r2 = new RelatorioComNumeracao(r2);
+        r2 = new RelatorioComMarcaDAgua(r2);
+        r2 = new RelatorioComCabecalho(r2);
+        System.out.println(r2.gerar());
 
         System.out.println();
         System.out.println("2) Estrutura curricular percorrida com instanceof");

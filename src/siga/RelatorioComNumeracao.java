@@ -1,7 +1,11 @@
 package siga;
 
 /** DESLIZE 1 — outra combinação, outra subclasse. */
-public class RelatorioComNumeracao extends RelatorioDeAlunos {
+public class RelatorioComNumeracao extends DecoratorRelatorio {
+
+    public RelatorioComNumeracao(Relatorio relatorio) {
+        super(relatorio);
+    }
 
     @Override
     public String gerar() {
