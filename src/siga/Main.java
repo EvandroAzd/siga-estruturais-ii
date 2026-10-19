@@ -26,7 +26,7 @@ public class Main {
         System.out.println(r2.gerar());
 
         System.out.println();
-        System.out.println("2) Estrutura curricular percorrida com instanceof");
+        System.out.println("2) Estrutura curricular percorrida sem instanceof");
         Modulo curso = new Modulo("DSM - Desenvolvimento de Software Multiplataforma");
 
         Modulo primeiro = new Modulo("1o semestre");
@@ -37,18 +37,26 @@ public class Main {
         segundo.adicionar(new Disciplina("Tecnicas de Programacao II", 80));
         segundo.adicionar(new Disciplina("Desenvolvimento Web II", 80));
 
+        // submódulo de terceiro nível dentro do 2o semestre
+        Modulo laboratorio = new Modulo("Laboratorio de Praticas");
+        laboratorio.adicionar(new Disciplina("Pratica Web", 40));
+        laboratorio.adicionar(new Disciplina("Pratica Mobile", 40));
+        segundo.adicionar(laboratorio);
+
         curso.adicionar(primeiro);
         curso.adicionar(segundo);
         curso.adicionar(new Disciplina("Projeto Integrador", 40));
 
-        GradeCurricular grade = new GradeCurricular();
-        grade.imprimir(curso, 1);
-        System.out.println("   Carga total: " + grade.calcularCarga(curso) + "h");
-        System.out.println("   >> DESLIZE 3: a travessia com instanceof aparece DUAS vezes,");
-        System.out.println("      uma em calcularCarga e outra em imprimir. Uma terceira");
-        System.out.println("      operacao exigiria uma terceira copia.");
+        //aplicando o composite
+        System.out.println(curso.imprimir(0));
+        System.out.println("Carga total: " + curso.getCargaHoraria() + "h");
 
-        System.out.println();
-        System.out.println("Sua tarefa: ver o README.md e a ficha de atividade pratica.");
+//        GradeCurricular grade = new GradeCurricular();
+//        grade.imprimir(curso, 1);
+//        System.out.println("   Carga total: " + grade.calcularCarga(curso) + "h");
+//        System.out.println("   >> DESLIZE 3: a travessia com instanceof aparece DUAS vezes,");
+//        System.out.println("      uma em calcularCarga e outra em imprimir. Uma terceira");
+//        System.out.println("      operacao exigiria uma terceira copia.");
+
     }
 }
